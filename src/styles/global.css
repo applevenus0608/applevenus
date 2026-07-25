@@ -161,11 +161,50 @@ article.full .meta { margin-bottom: 22px; }
 
 article.full p { font-size: 16.5px; color: var(--ink); }
 
+/* 記事本文中の画像: デフォルトは単体の写真として、余白を持たせたカード風表示 */
 article.full img {
-  max-width: 100%;
+  display: block;
+  max-width: min(100%, 480px);
+  width: 100%;
   height: auto;
-  border-radius: 4px;
-  margin: 8px 0;
+  margin: 32px auto;
+  padding: 10px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+/* リンクで画像を囲んでいる場合、リンク自体をブロック化して余白を維持 */
+article.full p > a:has(img) {
+  display: block;
+}
+
+/* サムネイル画像(ファイル名に thumb を含むもの)は小さく・横並びに */
+article.full img[src*="thumb"],
+article.full img[src*="Thumb"] {
+  display: inline-block;
+  width: auto;
+  max-width: 110px;
+  margin: 4px;
+  padding: 4px;
+  vertical-align: top;
+}
+
+/* サムネイルを複数含む段落は、横並び・折り返し表示のグループにする */
+article.full p:has(img[src*="thumb"]),
+article.full p:has(img[src*="Thumb"]) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2px;
+  margin: 20px 0;
+}
+
+article.full p:has(img[src*="thumb"]) a,
+article.full p:has(img[src*="Thumb"]) a {
+  display: inline-block;
 }
 
 .comments {
