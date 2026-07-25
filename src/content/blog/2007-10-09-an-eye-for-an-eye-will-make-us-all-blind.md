@@ -10,7 +10,7 @@ legacy_id: "146"
 
 今日は、John Lennonの誕生日。
 タイトルは、iTune music storeで購入した
-[John Lennonの‘Happy Xmas (War Is Over)’](http://click.linksynergy.com/fs-bin/stat?id=Cg32N66S3Hc&offerid=94348&type=3&subid=0&tmpid=2192&RD_PARM1=http%253A%252F%252Fphobos.apple.com%252FWebObjects%252FMZStore.woa%252Fwa%252FviewVideo%253Fid%253D261400966%2526s%253D143462%2526partnerId%253D30)
+John Lennonの‘Happy Xmas (War Is Over)’
 と言うミュージックビデオの最後に掲げられたMahatma Gandhiによるメッセージです。
 日本語に訳すると
 「復讐心は、私達から理性を剥奪する」ですかね？

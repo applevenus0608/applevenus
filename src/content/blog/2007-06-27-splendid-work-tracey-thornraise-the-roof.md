@@ -8,9 +8,9 @@ tags: ["Tracey Thorn\"Raise the Roof\""]
 legacy_id: "121"
 ---
 
-[![20070627_Tracey_Thorn.jpg](http://applevenus.jpn.org/log/archives/2007/06/27/img/20070627_Tracey_Thorn.jpg)](http://click.linksynergy.com/fs-bin/click?id=Cg32N66S3Hc&offerid=94348.587421087&type=10&subid=)![icon](http://ad.linksynergy.com/fs-bin/show?id=Cg32N66S3Hc&bids=94348.587421087&type=10&subid=)
+![20070627_Tracey_Thorn.jpg](http://applevenus.jpn.org/log/archives/2007/06/27/img/20070627_Tracey_Thorn.jpg)
 
-#### トレーシー・ソーン Tracey Thorn ["Raise the Roof"](http://click.linksynergy.com/fs-bin/click?id=Cg32N66S3Hc&offerid=94348.587421087&type=10&subid=)icon
+#### トレーシー・ソーン Tracey Thorn "Raise the Roof"
 
 ここのところ、UK発の所謂「キュンとくる」ビデオが立て続けに発表されています。
 その中でも、トレーシー・ソーン"Tracey Thorn"のビデオクリップ["Raise the Roof"](http://www.video-c.co.uk/newmicrosites/microsite_watchvideo.asp?FileType=ADSLProg&vidref=trac003)に至っては、私的には最近のミュージックビデオの中でピカイチのヒットです。因みに"Raise the Roof"というのは、直訳すると「天井を持ち上げる???」なのですが、慣用句で「押さえられない熱中（想い）を表す」または、「大声で叫んだり、手をたたいたり、歌ったりする」を意味するそうです。
