@@ -1,0 +1,218 @@
+:root {
+  --paper: #EAF0EF;
+  --paper-raised: #F4F8F7;
+  --ink: #182626;
+  --ink-soft: #3A4A49;
+  --muted: #71807E;
+  --bondi: #007C87;
+  --bondi-deep: #00565E;
+  --gold: #D98F2B;
+  --gold-deep: #7A4E0F;
+  --line: #C7D3D1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Source Serif 4', serif;
+  line-height: 1.75;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 24px 120px;
+}
+
+header.site {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 18px;
+  margin-bottom: 8px;
+}
+
+.logo {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.logo .cursor {
+  display: inline-block;
+  width: 9px;
+  height: 18px;
+  background: var(--bondi);
+  margin-left: 2px;
+  vertical-align: -3px;
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+nav.site {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 18px;
+}
+
+nav.site a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--muted);
+}
+
+.tagline {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 14px 0 46px;
+  letter-spacing: .02em;
+}
+
+.badge {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: 3px 8px;
+  border: 1px dashed var(--bondi-deep);
+  color: var(--bondi-deep);
+  background: var(--paper-raised);
+  transform: rotate(-1.5deg);
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.badge.gold {
+  border-color: #9C6414;
+  color: var(--gold-deep);
+}
+
+.entry {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry:first-of-type { padding-top: 0; }
+
+.meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.entry h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+.entry h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.entry h2 a:hover { color: var(--bondi-deep); }
+
+.excerpt {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.more {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--bondi-deep);
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+article.full h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 22px 0 6px;
+  letter-spacing: -0.5px;
+}
+
+article.full .meta { margin-bottom: 22px; }
+
+article.full p { font-size: 16.5px; color: var(--ink); }
+
+article.full img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.comments {
+  margin-top: 56px;
+  border-top: 1.5px solid var(--ink);
+  padding-top: 20px;
+}
+
+.comments h3 {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+.comment {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.comment .who {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--bondi-deep);
+  margin-bottom: 6px;
+}
+
+.comment p { font-size: 14.5px; margin: 0; color: var(--ink-soft); }
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  margin-top: 40px;
+}
+
+.pagination a { color: var(--bondi-deep); text-decoration: none; }
+
+footer.site {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 70px;
+}

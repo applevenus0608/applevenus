@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryBadge from '../../components/CategoryBadge.astro';
+import { toSlug } from '../../utils/slug';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => data.status === 'publish');
+  const categoryMap = new Map<string, { name: string; posts: typeof posts }>();
+
+  for (const post of posts) {
+    for (const cat of post.data.categories) {
+      const slug = toSlug(cat);
+      if (!categoryMap.has(slug)) categoryMap.set(slug, { name: cat, posts: [] });
+      categoryMap.get(slug)!.posts.push(post);
+    }
+  }
+
+  return Array.from(categoryMap.entries()).map(([slug, { name, posts }]) => ({
+    params: { category: slug },
+    props: { name, posts: posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()) },
+  }));
+}
+
+const { name, posts } = Astro.props;
+
+function formatDate(d: string) {
+  return d.slice(0, 10).replace(/-/g, '.');
+}
+---
+
+<BaseLayout title={`${name} | applevenus`}>
+  <p class="tagline">category: {name} ({posts.length})</p>
+  {posts.map((post) => (
+    <div class="entry">
+      <div class="meta">
+        <span>{formatDate(post.data.date)}</span>
+        {post.data.categories.map((c) => <CategoryBadge name={c} />)}
+      </div>
+      <h2><a href={`/blog/${post.data.slug}`}>{post.data.title}</a></h2>
+    </div>
+  ))}
+</BaseLayout>

@@ -1,0 +1,51 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryBadge from '../../components/CategoryBadge.astro';
+import commentsData from '../../data/comments.json';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => data.status === 'publish');
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function formatDate(d: string) {
+  return d.slice(0, 10).replace(/-/g, '.');
+}
+
+// 旧サイトのコメント(移行データ)を旧WordPress投稿ID(legacy_id)で引き当てる
+const comments = (commentsData as Record<string, any[]>)[post.data.legacy_id] ?? [];
+---
+
+<BaseLayout title={`${post.data.title} | applevenus`}>
+  <article class="full">
+    <div class="meta">
+      <span>{formatDate(post.data.date)}</span>
+      {post.data.categories.map((c) => <CategoryBadge name={c} />)}
+    </div>
+    <h1>{post.data.title}</h1>
+    <Content />
+
+    {comments.length > 0 && (
+      <div class="comments">
+        <h3>{comments.length} comments (旧サイトより移行)</h3>
+        {comments.map((c) => (
+          <div class="comment">
+            <div class="who">{c.author} — {c.date.slice(0, 10)}</div>
+            <p>{c.content}</p>
+          </div>
+        ))}
+      </div>
+    )}
+  </article>
+</BaseLayout>

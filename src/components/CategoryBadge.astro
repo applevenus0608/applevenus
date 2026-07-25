@@ -1,0 +1,16 @@
+---
+import { toSlug } from '../utils/slug';
+
+interface Props {
+  name: string;
+}
+const { name } = Astro.props;
+
+// music / candy says はゴールド系、それ以外はティール系のラベルに振り分け
+const goldCategories = ['music', 'candy says'];
+const isGold = goldCategories.includes(name.toLowerCase());
+
+const slug = toSlug(name);
+---
+
+<a href={`/categories/${encodeURIComponent(slug)}`} class={`badge ${isGold ? 'gold' : ''}`}>{name}</a>
