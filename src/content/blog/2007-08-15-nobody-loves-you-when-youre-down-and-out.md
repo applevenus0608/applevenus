@@ -8,7 +8,7 @@ tags: []
 legacy_id: "135"
 ---
 
-![John Lennon/Walls and Bridges](http://applevenus.jpn.org/log/archives/2007/08/15/img/20070815_john.jpg)John Lennonの楽曲がiTune Storeに登場。数ある同氏の作品群で迷わず選択したのが"Walls and Bridges"でした。
+![John Lennon/Walls and Bridges](/legacy/log/archives/2007/08/15/img/20070815_john.jpg)John Lennonの楽曲がiTune Storeに登場。数ある同氏の作品群で迷わず選択したのが"Walls and Bridges"でした。
 「あなたが、凹んでしまって、外界との繋がりを失ってしまった時、誰もあなたを愛してくれない。」
 Johnが、公私ともに一番凹んでいたいた時の作品ではないかと思います。
 しかし、そこはJohn。一人で孤独で一番きつい状況下で、真理とか悟りとか透き通ったピュアな境地に自分自身を見出し、蘇るのです。

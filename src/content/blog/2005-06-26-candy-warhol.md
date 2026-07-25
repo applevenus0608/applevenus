@@ -8,10 +8,10 @@ tags: []
 legacy_id: "28"
 ---
 
-![candy_warhol_01.jpg](http://applevenus.jpn.org/log/archives/candy_warhol_01.jpg)
+![candy_warhol_01.jpg](/legacy/log/archives/candy_warhol_01.jpg)
 物思いに耽る名犬Candy
 一体何を考えているのでしょうか？
-![candy_warhol_00.jpg](http://applevenus.jpn.org/log/archives/candy_warhol_00.jpg)
+![candy_warhol_00.jpg](/legacy/log/archives/candy_warhol_00.jpg)
 Candy曰わく
 「っていうか、アホなことして悦に入っている暇があるんだったら
 しごとすればー」

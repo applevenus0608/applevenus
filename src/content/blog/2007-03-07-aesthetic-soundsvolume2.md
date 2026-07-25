@@ -12,7 +12,7 @@ legacy_id: "103"
 
 ##### Album:"Kind of Blue"
 
-[![miles_davis_kind_of_blue.jpg](http://applevenus.jpn.org/log/archives/2007/03/07/img/miles_davis_kind_of_blue.jpg)](http://www.amazon.co.jp/Kind-Blue-Miles-Davis/dp/B000002ADT/)
+[![miles_davis_kind_of_blue.jpg](/legacy/log/archives/2007/03/07/img/miles_davis_kind_of_blue.jpg)](http://www.amazon.co.jp/Kind-Blue-Miles-Davis/dp/B000002ADT/)
 
 "Kind of Blue"をどのように日本語に訳するか？ずいぶん考えました。今風にいえば「ブルーな感じー」とすればそれで、通用してしまうのでしょうけれど、違いますよね(^\_^;)　
 私は、アルバム全体の流れからして、「唯ぼんやりとした不安」がもっとも相応しいのではないかと考えました。そうです。あの芥川龍之介が、彼の遺書に著した「唯ぼんやりとした不安」です。それだけ、重たい題目をここでMilesが掲げた理由は？その理由を見いだすことができるのが、今回の"Blue In Green"と云う数あるJazzのバラードの中で、最も超然とした美しさと崇高な輝きを放つ曲ではないかと。

@@ -8,7 +8,7 @@ tags: []
 legacy_id: "43"
 ---
 
-![WSP.gif](http://applevenus.jpn.org/log/archives/WSP.gif)Applevenus Media Projectのトップページ記事として「Visionビジョンとしてのアクセシビリティを掲げた直後の事です。最近さぼり気味だったMr.Zeldmanによる、[Web Standards Project](http://www.webstandards.org/)へ立ち寄ると、現在アメリカにおいて近く日本でもおそらく起こるだろうとApplevenus Media Projectが予測していた身体障害者団体による企業へ対する訴訟が現実に起こっていると云うショッキングな[ニュース](http://www.webstandards.org/2006/02/09/taking-aim-at-targetcom/)が飛び込んできました。"The National Federation Of Blind"(NFB) 「目の不自由な方々の米国連邦団体」が、大手量販店"Target"「ターゲット」（米国を拠点とした大手ディスカウントストアー。１３００以上の店舗を４７の州で運営。日本で例えるならば、ヨーカドーかジャスコクラスの大型量販店）に対して、そのWebサイトがアクセシブルでは無いと法的処置をとるというのです。
+![WSP.gif](/legacy/log/archives/WSP.gif)Applevenus Media Projectのトップページ記事として「Visionビジョンとしてのアクセシビリティを掲げた直後の事です。最近さぼり気味だったMr.Zeldmanによる、[Web Standards Project](http://www.webstandards.org/)へ立ち寄ると、現在アメリカにおいて近く日本でもおそらく起こるだろうとApplevenus Media Projectが予測していた身体障害者団体による企業へ対する訴訟が現実に起こっていると云うショッキングな[ニュース](http://www.webstandards.org/2006/02/09/taking-aim-at-targetcom/)が飛び込んできました。"The National Federation Of Blind"(NFB) 「目の不自由な方々の米国連邦団体」が、大手量販店"Target"「ターゲット」（米国を拠点とした大手ディスカウントストアー。１３００以上の店舗を４７の州で運営。日本で例えるならば、ヨーカドーかジャスコクラスの大型量販店）に対して、そのWebサイトがアクセシブルでは無いと法的処置をとるというのです。
 NFBの言い分は「ターゲットのWebサイトは昨年５月に我々が苦情申し立てを行った時と比較して改善がなされていない。」と云う事のようです。
 Zeldman氏は、「これは約１０ヶ月前の事であり、ターゲットは、この問題を修復する、あるいは少なくとも改善する充分な時間があったはずだと指摘した上で、「賢明な諸君へ」とし、次のようなアドバイスを行っています。「もしあなた方が、Webへ訪問する人々のフィードバックに基づいたWebサイトのの作成を行っていいるならば、あなたが対応している具体的なプロセスを文書化する事です。この事により少なくとも指摘を受けた問題点に対して対応を行っている事を提示することができます。そして、あなたがこの事を実行する事で、あなたが行った改善の一つ一つを公に知らしめる事が可能になるのです。これは、云うまでもなくビジネスセンスにかなった事ですよね？」と。
 また、続いて公式文書として掲載されている[NFB vs. Target case documents](http://www.dralegal.org/downloads/cases/target/nfb_v_target_complaint.pdf)には、問題となる箇所が、少なからずありますがこれを集約すると次のようになります。

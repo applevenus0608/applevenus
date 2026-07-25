@@ -8,7 +8,7 @@ tags: ["Tracey Thorn\"Raise the Roof\""]
 legacy_id: "121"
 ---
 
-![20070627_Tracey_Thorn.jpg](http://applevenus.jpn.org/log/archives/2007/06/27/img/20070627_Tracey_Thorn.jpg)
+![20070627_Tracey_Thorn.jpg](/legacy/log/archives/2007/06/27/img/20070627_Tracey_Thorn.jpg)
 
 #### トレーシー・ソーン Tracey Thorn "Raise the Roof"
 

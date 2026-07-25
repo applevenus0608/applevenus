@@ -12,7 +12,7 @@ legacy_id: "100"
 
 ##### Album:"Blood On The Tracks"
 
-[![Blood-On-The-Tracks.jpg](http://applevenus.jpn.org/log/archives/2007/02/24/img/Blood-On-The-Tracks.jpg)](http://www.amazon.co.jp/Blood-Tracks-Bob-Dylan/dp/B00026WU7I)
+[![Blood-On-The-Tracks.jpg](/legacy/log/archives/2007/02/24/img/Blood-On-The-Tracks.jpg)](http://www.amazon.co.jp/Blood-Tracks-Bob-Dylan/dp/B00026WU7I)
 
 考えてみれば、音楽だけは何があろうとかわらず継続的に聞いてきました。しかしながら、最近の新しい音楽を聴いて感銘を受ける事は稀にしかありません。そこで、ジャンルを問わず私が聞いて来た、そして、その素晴らしさを再発見した音楽をみんさんと分かち合えるように、温故知新を目的として
 ::Aesthetic Sounds::

@@ -8,8 +8,8 @@ tags: []
 legacy_id: "22"
 ---
 
-![spring_00.jpg](http://applevenus.jpn.org/log/archives/image/spring_00.jpg)
+![spring_00.jpg](/legacy/log/archives/image/spring_00.jpg)
 キャンディー曰わく「春眠暁を覚えず」
-![plum_01.jpg](http://applevenus.jpn.org/log/archives/image/plum_01.jpg)
+![plum_01.jpg](/legacy/log/archives/image/plum_01.jpg)
 梅の花もきれいに咲きました。
-![plum_00.jpg](http://applevenus.jpn.org/log/archives/image/plum_00.jpg)
+![plum_00.jpg](/legacy/log/archives/image/plum_00.jpg)

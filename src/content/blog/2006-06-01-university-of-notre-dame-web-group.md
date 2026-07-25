@@ -8,7 +8,7 @@ tags: []
 legacy_id: "44"
 ---
 
-![notre_dame.jpg](http://applevenus.jpn.org/log/archives/notre_dame.jpg)
+![notre_dame.jpg](/legacy/log/archives/notre_dame.jpg)
 [Steve Smith](http://orderedlist.com/)氏をリーダーとする、名門ノートルダム大学におけるウェブスタンダードへの取り組みは、 同大学の[Office of Public Affairs](http://opac.nd.edu/)（公衆業務=>パブリックリレーションと同義）と言う部門がウェブスタンダードとアクセスビリティを大学における重要な位置づけとして迎え入れる事を目的とし３年前よりプロジェクトを立ち上げ、進めてきたものです。
 その成果は、同大学各学部の制作実績を見る事により知ることができます。
 まずは、

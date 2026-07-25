@@ -8,7 +8,7 @@ tags: []
 legacy_id: "97"
 ---
 
-![last_01.gif](http://applevenus.jpn.org/log/archives/2007/02/22/img/last_01.gif)Honjinさんと「えもし完走者」さんのご協力により、
+![last_01.gif](/legacy/log/archives/2007/02/22/img/last_01.gif)Honjinさんと「えもし完走者」さんのご協力により、
 ["Emoshi Live" Images](http://web.mac.com/applevenus/iWeb/Site_Emoshi/Emoshi_Live_Home.html)
 **↑↑↑↑↑**
 **（写真集を見るにはこちらをクリック下さい）**

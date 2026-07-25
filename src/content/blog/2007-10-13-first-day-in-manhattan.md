@@ -8,7 +8,7 @@ tags: []
 legacy_id: "147"
 ---
 
-![20071011_NY_00.jpg](http://applevenus.jpn.org/log/archives/2007/10/13/img/20071011_NY_00.jpg)
+![20071011_NY_00.jpg](/legacy/log/archives/2007/10/13/img/20071011_NY_00.jpg)
 私を迎えてくれたN.Y.C.は、雨模様。
 今回の宿泊は、Madison Square Gardenの真横に位置するHotel Pennsylvania。
 Lou ReedのConey Island Baby と言う曲の歌詞にCity（マンハッタン）を表現した、
