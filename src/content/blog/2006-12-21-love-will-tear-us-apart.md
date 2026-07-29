@@ -10,7 +10,7 @@ legacy_id: "78"
 
 Joy Divisionというバンドの"Love Will Tear Us Apart"という曲があります。そのJoy Divisionが、アメリカツアーを直前に控えた1980年5月18日の日曜日、突如Joy Divisionのリードボーカル、イアン・カーティスは自宅で首を吊り自殺しました。
 　その翌年の1981年、私が初めて訪れたロンドンでは、引っ切り無しにこの"Love Will Tear Us Apart"が、流れてたのを思い出します。
-　以前、[パンクの原点はNew York](http://applevenus.jpn.org/log/archives/2006/10/18/)にあったと書きましたが、そのNew YorkでMr.David Johansen率いるNew York DollsのPunkぶりを目の当たりにして多大なる影響を受けLondonへ帰ったMr.Malcolm Mclarenが、そのままパクってでっち上げたのがSex Pistolsだったのです。
+　以前、パンクの原点はNew Yorkにあったと書きましたが、そのNew YorkでMr.David Johansen率いるNew York DollsのPunkぶりを目の当たりにして多大なる影響を受けLondonへ帰ったMr.Malcolm Mclarenが、そのままパクってでっち上げたのがSex Pistolsだったのです。
 　そして、1976年6月4日金曜日にマンチェスターのフリー・トレード・ホールで行われたセックス・ピストルズのライブに衝撃を受けて、Joy Divisionは結成されました。
 そのセックス・ピストルズのライブの観客数はわずか42人だったそうですが、、その42人の中には
 ファクトリー・レコードを設立したトニー・ウィルソン、
