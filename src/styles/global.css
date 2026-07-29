@@ -161,11 +161,11 @@ article.full .meta { margin-bottom: 22px; }
 
 article.full p { font-size: 16.5px; color: var(--ink); }
 
-/* 記事本文中の画像: デフォルトは単体の写真として、余白を持たせたカード風表示 */
+/* 記事本文中の画像: デフォルトは単体の写真として、余白を持たせたカード風表示
+   ※ width指定はせず max-width のみにすることで、小さい元画像を無理に拡大(ボヤケの原因)しない */
 article.full img {
   display: block;
   max-width: min(100%, 480px);
-  width: 100%;
   height: auto;
   margin: 32px auto;
   padding: 10px;
