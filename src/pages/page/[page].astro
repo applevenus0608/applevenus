@@ -1,13 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CategoryBadge from '../../components/CategoryBadge.astro';
 import { PER_PAGE } from '../../utils/pagination';
+import { getUnifiedPosts } from '../../lib/posts';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const allPosts = await getCollection('blog', ({ data }) => data.status === 'publish');
-  const sorted = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+  const sorted = await getUnifiedPosts();
   // ページ1は index.astro が担当するため、[page].astro 側は2ページ目以降のみ生成
   return paginate(sorted, { pageSize: PER_PAGE }).slice(1);
 }) satisfies GetStaticPaths;
@@ -17,23 +16,18 @@ const { page } = Astro.props;
 function formatDate(d: string) {
   return d.slice(0, 10).replace(/-/g, '.');
 }
-
-function excerpt(body: string) {
-  const plain = body.replace(/[#*_>`\[\]!]/g, '').replace(/\n+/g, ' ').trim();
-  return plain.length > 90 ? plain.slice(0, 90) + '…' : plain;
-}
 ---
 
 <BaseLayout title={`applevenus media project – page ${page.currentPage}`}>
   {page.data.map((post) => (
     <div class="entry">
       <div class="meta">
-        <span>{formatDate(post.data.date)}</span>
-        {post.data.categories.map((c) => <CategoryBadge name={c} />)}
+        <span>{formatDate(post.date)}</span>
+        {post.categories.map((c) => <CategoryBadge name={c} />)}
       </div>
-      <h2><a href={`/blog/${post.data.slug}`}>{post.data.title}</a></h2>
-      <p class="excerpt">{excerpt(post.body)}</p>
-      <a class="more" href={`/blog/${post.data.slug}`}>続きを読む →</a>
+      <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+      <p class="excerpt">{post.excerpt}</p>
+      <a class="more" href={`/blog/${post.slug}`}>続きを読む →</a>
     </div>
   ))}
 

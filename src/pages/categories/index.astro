@@ -1,13 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { toSlug } from '../../utils/slug';
+import { getUnifiedPosts } from '../../lib/posts';
 
-const posts = await getCollection('blog', ({ data }) => data.status === 'publish');
+const posts = await getUnifiedPosts();
 const counts = new Map<string, { name: string; count: number }>();
 
 for (const post of posts) {
-  for (const cat of post.data.categories) {
+  for (const cat of post.categories) {
     const slug = toSlug(cat);
     const entry = counts.get(slug) ?? { name: cat, count: 0 };
     entry.count += 1;

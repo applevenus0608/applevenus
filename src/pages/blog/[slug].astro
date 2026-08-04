@@ -1,40 +1,52 @@
 ---
-import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CategoryBadge from '../../components/CategoryBadge.astro';
 import commentsData from '../../data/comments.json';
+import { getUnifiedPosts, type UnifiedPost } from '../../lib/posts';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => data.status === 'publish');
+  const posts = await getUnifiedPosts();
   return posts.map((post) => ({
-    params: { slug: post.data.slug },
+    params: { slug: post.slug },
     props: { post },
   }));
 }
 
 interface Props {
-  post: CollectionEntry<'blog'>;
+  post: UnifiedPost;
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+
+// Markdown記事は事前コンパイルされたコンポーネントとして描画、microCMS記事はHTMLをそのまま埋め込む
+let MarkdownContent: any = null;
+if (post.source === 'markdown' && post.markdownEntry) {
+  const rendered = await render(post.markdownEntry);
+  MarkdownContent = rendered.Content;
+}
 
 function formatDate(d: string) {
   return d.slice(0, 10).replace(/-/g, '.');
 }
 
-// 旧サイトのコメント(移行データ)を旧WordPress投稿ID(legacy_id)で引き当てる
-const comments = (commentsData as Record<string, any[]>)[post.data.legacy_id] ?? [];
+// 旧サイトのコメント(移行データ)は、旧WordPress記事(legacy_id)にのみ存在する
+const legacyId = post.markdownEntry?.data.legacy_id;
+const comments = legacyId ? (commentsData as Record<string, any[]>)[legacyId] ?? [] : [];
 ---
 
-<BaseLayout title={`${post.data.title} | applevenus`}>
+<BaseLayout title={`${post.title} | applevenus`}>
   <article class="full">
     <div class="meta">
-      <span>{formatDate(post.data.date)}</span>
-      {post.data.categories.map((c) => <CategoryBadge name={c} />)}
+      <span>{formatDate(post.date)}</span>
+      {post.categories.map((c) => <CategoryBadge name={c} />)}
     </div>
-    <h1>{post.data.title}</h1>
-    <Content />
+    <h1>{post.title}</h1>
+
+    {post.source === 'markdown' && MarkdownContent && <MarkdownContent />}
+    {post.source === 'microcms' && post.microcmsPost && (
+      <Fragment set:html={post.microcmsPost.content} />
+    )}
 
     {comments.length > 0 && (
       <div class="comments">

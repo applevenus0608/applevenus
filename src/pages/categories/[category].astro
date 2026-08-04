@@ -1,15 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CategoryBadge from '../../components/CategoryBadge.astro';
 import { toSlug } from '../../utils/slug';
+import { getUnifiedPosts, type UnifiedPost } from '../../lib/posts';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => data.status === 'publish');
-  const categoryMap = new Map<string, { name: string; posts: typeof posts }>();
+  const posts = await getUnifiedPosts();
+  const categoryMap = new Map<string, { name: string; posts: UnifiedPost[] }>();
 
   for (const post of posts) {
-    for (const cat of post.data.categories) {
+    for (const cat of post.categories) {
       const slug = toSlug(cat);
       if (!categoryMap.has(slug)) categoryMap.set(slug, { name: cat, posts: [] });
       categoryMap.get(slug)!.posts.push(post);
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
   return Array.from(categoryMap.entries()).map(([slug, { name, posts }]) => ({
     params: { category: slug },
-    props: { name, posts: posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()) },
+    props: { name, posts: posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) },
   }));
 }
 
@@ -34,10 +34,10 @@ function formatDate(d: string) {
   {posts.map((post) => (
     <div class="entry">
       <div class="meta">
-        <span>{formatDate(post.data.date)}</span>
-        {post.data.categories.map((c) => <CategoryBadge name={c} />)}
+        <span>{formatDate(post.date)}</span>
+        {post.categories.map((c) => <CategoryBadge name={c} />)}
       </div>
-      <h2><a href={`/blog/${post.data.slug}`}>{post.data.title}</a></h2>
+      <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
     </div>
   ))}
 </BaseLayout>
