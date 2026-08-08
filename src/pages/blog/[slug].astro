@@ -2,6 +2,7 @@
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CategoryBadge from '../../components/CategoryBadge.astro';
+import Giscus from '../../components/Giscus.astro';
 import commentsData from '../../data/comments.json';
 import { getUnifiedPosts, type UnifiedPost } from '../../lib/posts';
 
@@ -59,5 +60,7 @@ const comments = legacyId ? (commentsData as Record<string, any[]>)[legacyId] ??
         ))}
       </div>
     )}
+
+    <Giscus />
   </article>
 </BaseLayout>
