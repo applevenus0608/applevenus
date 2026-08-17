@@ -27,11 +27,158 @@ const { title, description = 'applevenus media project — web standard, apple, 
         <a href="/">archive</a>
         <a href="/categories">categories</a>
         <a href="/about">about</a>
+        <button id="search-trigger" type="button" aria-label="検索を開く">search</button>
       </nav>
     </header>
     <p class="tagline">// web standard, apple, candy says — 2005–</p>
     <slot />
     <footer class="site">applevenus media project — since 2005</footer>
   </div>
+
+  <div id="search-modal" class="search-modal" hidden>
+    <div class="search-modal-inner">
+      <button id="search-close" type="button" aria-label="検索を閉じる">閉じる ×</button>
+      <p id="search-fallback" class="search-fallback">読み込み中です…</p>
+      <div id="search-mount"></div>
+    </div>
+  </div>
+
+  <script>
+    const trigger = document.getElementById('search-trigger');
+    const modal = document.getElementById('search-modal');
+    const closeBtn = document.getElementById('search-close');
+    const fallback = document.getElementById('search-fallback');
+    let loaded = false;
+
+    function openSearch() {
+      if (!modal) return;
+      modal.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+
+      if (!loaded) {
+        loaded = true;
+
+        const cssLink = document.createElement('link');
+        cssLink.rel = 'stylesheet';
+        cssLink.href = '/pagefind/pagefind-ui.css';
+        document.head.appendChild(cssLink);
+
+        const fallbackTimer = window.setTimeout(() => {
+          if (fallback) {
+            fallback.textContent = '検索の準備ができていません。npm run build を実行した後、npm run preview で確認してください。';
+          }
+        }, 2500);
+
+        const script = document.createElement('script');
+        script.src = '/pagefind/pagefind-ui.js';
+        script.onload = () => {
+          window.clearTimeout(fallbackTimer);
+          if (fallback) fallback.style.display = 'none';
+          // @ts-ignore
+          new PagefindUI({ element: '#search-mount', showImages: false, resetStyles: false });
+          const input = document.querySelector('#search-mount input');
+          if (input instanceof HTMLInputElement) input.focus();
+        };
+        script.onerror = () => {
+          window.clearTimeout(fallbackTimer);
+          if (fallback) {
+            fallback.textContent = '検索の準備ができていません。npm run build を実行した後、npm run preview で確認してください。';
+          }
+        };
+        document.body.appendChild(script);
+      } else {
+        const input = document.querySelector('#search-mount input');
+        if (input instanceof HTMLInputElement) input.focus();
+      }
+    }
+
+    function closeSearch() {
+      if (!modal) return;
+      modal.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+    }
+
+    trigger?.addEventListener('click', openSearch);
+    closeBtn?.addEventListener('click', closeSearch);
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) closeSearch();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSearch();
+    });
+  </script>
+
+  <style>
+    #search-trigger {
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: 'Space Mono', monospace;
+      font-size: inherit;
+      color: inherit;
+      cursor: pointer;
+      border-bottom: 1px dotted var(--muted);
+    }
+
+    /* 重要: [hidden]属性がある間は必ず非表示にする(表示スタイルより優先させる) */
+    .search-modal[hidden] {
+      display: none;
+    }
+
+    .search-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(24, 38, 38, 0.55);
+      z-index: 100;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 8vh 20px;
+    }
+
+    .search-modal-inner {
+      position: relative;
+      background: var(--paper);
+      border: 1.5px solid var(--ink);
+      border-radius: 8px;
+      max-width: 640px;
+      width: 100%;
+      padding: 48px 24px 24px;
+      max-height: 78vh;
+      overflow-y: auto;
+    }
+
+    #search-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-size: 12px;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--ink);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .search-fallback {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    /* Pagefindの検索結果を、サイトの配色に合わせて上書き */
+    :global(.pagefind-ui) {
+      --pagefind-ui-primary: #00565e;
+      --pagefind-ui-text: #182626;
+      --pagefind-ui-background: transparent;
+      --pagefind-ui-border: #c7d3d1;
+      --pagefind-ui-tag: #eaf0ef;
+      --pagefind-ui-font: 'Source Serif 4', serif;
+    }
+  </style>
 </body>
 </html>
