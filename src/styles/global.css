@@ -28,9 +28,10 @@ body {
 }
 
 header.site {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   border-bottom: 1.5px solid var(--ink);
   padding-bottom: 18px;
   margin-bottom: 8px;
@@ -69,6 +70,63 @@ nav.site a {
   color: inherit;
   text-decoration: none;
   border-bottom: 1px dotted var(--muted);
+}
+
+/* ハンバーガーボタン(狭い画面幅でのみ表示。デフォルトは非表示) */
+.nav-toggle {
+  display: none;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: var(--paper-raised);
+  border: 1.5px solid var(--bondi-deep);
+  border-radius: 4px;
+  color: var(--bondi-deep);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-toggle:hover { background: var(--paper); }
+
+@media (max-width: 640px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  nav.site {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1.5px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bondi-deep);
+    border-bottom: 1.5px solid var(--ink);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    z-index: 20;
+  }
+
+  nav.site.is-open {
+    display: flex;
+  }
+
+  nav.site a,
+  nav.site #search-trigger {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 24px;
+    color: var(--paper);
+    border-bottom: 1px solid rgba(234, 240, 239, 0.25);
+    text-align: left;
+  }
+
+  nav.site a:last-child,
+  nav.site #search-trigger:last-child {
+    border-bottom: none;
+  }
 }
 
 .tagline {
